@@ -53,6 +53,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- 유효성 검사 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- Swagger -->
         <!--
         https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
