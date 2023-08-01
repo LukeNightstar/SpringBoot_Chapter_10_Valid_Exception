@@ -19,8 +19,8 @@ public class SwaggerConfig {
     }
 
     private static Info getApiInfo() {
-        return new Info().title("JPA TEST API DOCS").version("v1")
-                .description("JPA API TEST 명세서");
+        return new Info().title("Validation API").version("v1")
+                .description("유효성 검사 페이지");
     }
 
 }
