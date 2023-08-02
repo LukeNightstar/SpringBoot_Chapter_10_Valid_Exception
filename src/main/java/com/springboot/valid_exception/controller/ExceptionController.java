@@ -1,5 +1,7 @@
 package com.springboot.valid_exception.controller;
 
+import com.springboot.valid_exception.common.Constants;
+import com.springboot.valid_exception.common.exceptior.CustomException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +28,13 @@ public class ExceptionController {
         throw new RuntimeException("getRuntimeException 메서드 호출");
     }
 
+    @GetMapping("/custom")
+    public void getCustomException() throws CustomException {
+        throw new CustomException(Constants.ExceptionClass.PRODUCT, HttpStatus.BAD_REQUEST, "getCustomException 메서드 호출");
+    }
+    // HttpStatus.Unauthorized
+    // httpStatus.Not_Found
+
     @ExceptionHandler(value = RuntimeException.class)
     public ResponseEntity<Map<String, String>> handleException(RuntimeException e, HttpServletRequest request) {
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -42,5 +51,6 @@ public class ExceptionController {
 
         return new ResponseEntity<>(map, responseHeaders, httpStatus);
     }
+
 
 }

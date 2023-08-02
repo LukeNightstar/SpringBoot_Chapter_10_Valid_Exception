@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 
 public class CustomException extends Exception {
 
-    private Constants.ExceptionClass exceptionClass;
-    private HttpStatus httpStatus;
+    private final Constants.ExceptionClass exceptionClass;
+    private final HttpStatus httpStatus;
 
     public CustomException(Constants.ExceptionClass exceptionClass, HttpStatus httpStatus, String message) {
         super(exceptionClass.toString() + message);
